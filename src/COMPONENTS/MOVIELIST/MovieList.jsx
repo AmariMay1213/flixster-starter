@@ -1,5 +1,5 @@
-import MovieCard from "../MOVIECARD/MovieCard";
 import "./MovieList.css";
+import MovieCard from "../MOVIECARD/MovieCard";
 
 // MovieList receives the movie data from main.jsx as a prop
 const MovieList = ({ movies, onMovieClick }) => {

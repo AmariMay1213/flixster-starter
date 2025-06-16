@@ -20,6 +20,9 @@ const MovieModal = ({show, onClose,movie}) =>{
       alt={`${movie.title} poster`}
     />
     <p>Release Date: {movie.release_date}</p>
+    <p>Runtime: {movie.runtime} minutes</p>
+    {movie.genres && <p>Genres: {movie.genres.map(g => g.name).join(", ")}</p>}
+
     <p>Overview: {movie.overview}</p>
     
   </div>
