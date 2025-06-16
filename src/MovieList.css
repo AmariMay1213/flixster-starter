@@ -1,0 +1,15 @@
+.movies-list{
+      max-width: 1700px;
+    height: auto;
+     display: flex; 
+    flex-flow: row wrap; 
+    justify-content: center; 
+    margin: 0 auto; 
+    padding: 10px; 
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    gap: 1rem; 
+    /* background: url("/Users/amari.may/codepath/UNIT-3/flixster-starter/src/assets/flixter-background.jpeg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed; */
+}
