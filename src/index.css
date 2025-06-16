@@ -1,12 +1,12 @@
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  background: linear-gradient(to bottom, #0b0b2b, #1b2735 70%, #090a0f);
 }
 
 button {
-  background-color: #282c34;
-  color: white;
+  background-color: #010711;
+  color: rgb(215, 208, 208);
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
@@ -17,3 +17,12 @@ button:hover {
   background-color: #777;
   color: white;
 }
+
+header{
+  background-color: rgb(157, 16, 58);
+  color: aliceblue;
+  text-align: center;
+}
+
+
+

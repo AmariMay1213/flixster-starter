@@ -3,7 +3,7 @@ import MovieCard from "../MOVIECARD/MovieCard";
 
 // MovieList receives the movie data from main.jsx as a prop
 const MovieList = ({ movies, onMovieClick }) => {
-  // If the array is empty (e.g. search returned nothing), show a message
+  // If the array is empty , show a message
   if (movies.length === 0) {
     return <p className="no-results">No movies found.</p>;
   }

@@ -1,7 +1,6 @@
 import { useState } from "react";
 import axios from "axios";
 
-// We receive setMovies from main.jsx so we can update the movie list
 function SearchMovie({ setMovies }) {
   const [searchQuestion, setSearchQuestion] = useState("");
 

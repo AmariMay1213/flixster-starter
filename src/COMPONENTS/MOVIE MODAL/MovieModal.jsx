@@ -24,7 +24,11 @@ const MovieModal = ({show, onClose,movie}) =>{
     {movie.genres && <p>Genres: {movie.genres.map(g => g.name).join(", ")}</p>}
 
     <p>Overview: {movie.overview}</p>
-    
+
+    <img 
+    src = {`https://www.youtube.com/embed/${movie.id}`} 
+    alt = {`${movie.title} trailer` }
+    />
   </div>
 )}
 
@@ -35,3 +39,6 @@ const MovieModal = ({show, onClose,movie}) =>{
 };
 
 export default MovieModal; 
+
+//add eye feature for watched
+//add liked feature for favorite
