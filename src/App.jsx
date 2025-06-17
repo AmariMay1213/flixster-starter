@@ -107,10 +107,19 @@ function App() {
      {/* Give search access to setMovies */}
      <SearchMovie setMovies={setMovies} />
 
-      {/* adding dropdown feature  */}
+      {/* adding dropdown feature  
+      we are passing in setMovies as a prop (paramater), this is how you call a global param/prop*/}
      <DropDown setMovies={setMovies}/>
 
+
           </header>
+
+          <div className = "banner">
+            <div className = "banner-content">
+            <h2>Discover Your Next Favorite Movie</h2>
+            </div>
+
+          </div>
 
 <body>
 

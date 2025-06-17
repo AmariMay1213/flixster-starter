@@ -2,52 +2,68 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 
 function DropDown({setMovies}){
+    //once again we're using setMovies as a prop so that the movie values presented on the screen will be whatever setMovies is set to
+
     const [filter,setFilter] = useState("");
-    console.log("selected filter", filter);
+    //useState will be used to track whatever filter the user chooses and if the user chooses another one then the filter will be updated
 
-    // Calling the api
-    const handleFilter = async() =>{
-        try{
-            // get data
-            const response = await axios.get(
-                `https://api.themoviedb.org/3/discover/movie?include_adult=false&page=1&sort_by=${filter}`,
-                {
-                    params: {
-                       api_key: import.meta.env.VITE_API_KEY,
-                    },
-                }
-            ); 
-            console.log(response.data.results);
-            setMovies(response.data.results);
-        }catch(err){
-            console.error("Filter Failed: ", err); 
+    const handleChange = (e) =>{
+        setFilter(e.target.value); 
+        //makes sure that whenever the user selects a new filter option in the drop down bar the back end filter is also updated not just the front end 
+    }
+
+    useEffect(()=>{
+        //we use a useEffect as a function that does something when a filter is changed/chosen by the user kind of like an if the user does this 
+        //then I want to do this 
+
+        if(!filter){
+            return; 
+            //if no filter is selected then there is no need to do anything 
         }
-    }
 
-    const handleOnChange2 = (e) => {
-        // Set the filter step 1
-        setFilter(e.target.value)
-      // Call the api
-        handleFilter()
-    }
+        const fetchFilteredMovies = async () => {
+            try{
 
-      
+                const response = await axios.get(
+                            `https://api.themoviedb.org/3/discover/movie`,
+
+                    {
+                        params: {
+                            api_key: import.meta.env.VITE_API_KEY,
+                            sort_by: filter,
+                        },
+                    }
+                );
+                setMovies(response.data.results);
+                //here we are passing in the grabbed data and displaying it as a readable array for the setMovies object to read and pass 
+                //in for movies 
+
+            }catch(err){
+                console.error("Could not fetch filtered list of movies: ", err);
+                
+            }
+        }    
+            fetchFilteredMovies(); 
+
+
+    }, [filter]);
 
 
 
     return(
 
-        <div className='drop-down-bar'>
-            <label>Sort By: </label>
-            <select value = {filter} className='filter' onChange={handleOnChange2}>
-                 <option value = "primary_release_date.desc">Most Recent</option>
-                <option value = "popularity.desc">Most Popular Movies</option>
-                <option value = "title.desc">Alphabetic Order: Descending</option>
-                <option value = "title.asc">Alphabetic Order: Ascending</option>
-                <option value = "primary_release_date.asc">Older Movies</option>
-                <option value = "vote-average.desc">Voter Average: Descending</option>
-            </select>
-        </div>
+        <div className = "filters">
+       <select value={filter} onChange={handleChange} className='filter'>
+  <option value="popularity.desc">🎬 Trending (Most Popular)</option>
+  <option value="primary_release_date.desc">🆕 Release Date: Newest First</option>
+  <option value="primary_release_date.asc">📅 Release Date: Oldest First</option>
+  <option value="vote_average.desc">⭐️ Top Rated (Highest Vote Avg)</option>
+  <option value="title.asc">🔤 Title A–Z</option>
+  <option value="title.desc">🔤 Title Z–A</option>
+</select>
+
+</div>
+
         
 
 
