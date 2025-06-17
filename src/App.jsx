@@ -2,9 +2,9 @@ import React, { useState, useEffect } from "react";
 import ReactDOM from "react-dom/client";
 import axios from "axios";
 import MovieList from "./COMPONENTS/MOVIELIST/MovieList";
-import SearchMovie from "./COMPONENTS/SearchMovie";
+import SearchMovie from "./COMPONENTS/SEARCH/SearchMovie";
 import MovieModal from "./COMPONENTS/MOVIE MODAL/MovieModal";
-import DropDown from "./COMPONENTS/DropDown";
+import DropDown from "./COMPONENTS/DROPDWON /DropDown";
 
 import "./index.css";
 
@@ -125,7 +125,7 @@ function App() {
    <>
      <header className="header">
        <h1>Flixster</h1>
-
+<div className = "controls-container">
 
      {/* Give search access to setMovies */}
      <SearchMovie setMovies={setMovies} />
@@ -133,14 +133,12 @@ function App() {
       {/* adding dropdown feature  
       we are passing in setMovies as a prop (paramater), this is how you call a global param/prop*/}
      <DropDown setMovies={setMovies}/>
+     </div>
 
 
           </header>
 
           <div className = "banner">
-            <div className = "banner-content">
-            <h2>Discover Your Next Favorite Movie</h2>
-            </div>
 
           </div>
 

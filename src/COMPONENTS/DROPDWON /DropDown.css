@@ -1,0 +1,9 @@
+
+.filter {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 8px;
+  background-color: #010711;
+  color: white;
+  border: 1px solid #ccc;
+}

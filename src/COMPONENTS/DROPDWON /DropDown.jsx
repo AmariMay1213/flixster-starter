@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
+import "./DropDown.css"
 
 function DropDown({setMovies}){
     //once again we're using setMovies as a prop so that the movie values presented on the screen will be whatever setMovies is set to
