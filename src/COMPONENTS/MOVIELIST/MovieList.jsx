@@ -7,7 +7,7 @@ const MovieList = ({ movies, onMovieClick }) => {
   if (movies.length === 0) {
     return <p className="no-results">No movies found.</p>;
   }
-
+console.log(movies); 
   return (
     <div className="movies-list">
       {/* Loop through all movies passed in and render a MovieCard for each */}

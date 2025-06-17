@@ -47,6 +47,7 @@ function App() {
    try {
      const { data } = await axios.get(
        `https://api.themoviedb.org/3/movie/${movie.id}`,
+
     {
       params: {
          api_key: import.meta.env.VITE_API_KEY,
@@ -54,6 +55,28 @@ function App() {
    }
  );
 
+  const videoRes =  await axios.get(
+       `https://api.themoviedb.org/3/movie/${movie.id}/videos?`,
+
+    {
+      params: {
+         api_key: import.meta.env.VITE_API_KEY,
+      },
+   }
+  );
+
+  const movieVideos = videoRes.data.results;
+
+  const trailer = movieVideos.find(
+    (video) => video.type === 'Trailer' && 'YouTube'
+
+  );
+
+  data.trailerKey = trailer ? trailer.key: null; 
+  
+  
+  console.log("Movie Video Results: ",movieVideos); 
+  console.log("Data: " , data)
 
      setSelectedMovie(data);
    } catch (err) {

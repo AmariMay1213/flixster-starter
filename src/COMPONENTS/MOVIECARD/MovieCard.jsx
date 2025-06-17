@@ -41,7 +41,7 @@ const MovieCard = ({ movie, onClick }) => {
       </button>
 
       <button className="watched-button" onClick={watchedMovie}>
-          {watched ? "👁️‍🗨️" : "👁️"}
+          {watched ? "✅" : "👁️" }
       </button>
       
     </div>

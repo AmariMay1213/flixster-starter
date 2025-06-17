@@ -3,6 +3,10 @@ import "./MovieModal.css";
 const MovieModal = ({show, onClose,movie}) =>{
     if(!show) return null; 
 
+    console.log(movie);
+
+   
+
     return(
         <div className="modal" onClick={onClose}>
             <div className="modal-content" onClick={(e) => e.stopPropagation()}>
@@ -25,10 +29,15 @@ const MovieModal = ({show, onClose,movie}) =>{
 
     <p>Overview: {movie.overview}</p>
 
-    <img 
-    src = {`https://www.youtube.com/embed/${movie.id}`} 
-    alt = {`${movie.title} trailer` }
-    />
+  {<movie className="trailerKey"></movie> && (
+    //  <iframe>
+    //  src={`https://www.youtube.com/embed/${movie.trailerKey}`}
+    // alt = {`${movie.title} trailer` }
+    // </iframe>
+    <iframe width="560" height="315" src={`https://www.youtube.com/embed/${movie.trailerKey}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+  )}
+   
   </div>
 )}
 
@@ -40,5 +49,3 @@ const MovieModal = ({show, onClose,movie}) =>{
 
 export default MovieModal; 
 
-//add eye feature for watched
-//add liked feature for favorite
