@@ -23,11 +23,11 @@ const MovieModal = ({show, onClose,movie}) =>{
       src={`https://image.tmdb.org/t/p/w200${movie.poster_path}`}
       alt={`${movie.title} poster`}
     />
-    <p>Release Date: {movie.release_date}</p>
-    <p>Runtime: {movie.runtime} minutes</p>
-    {movie.genres && <p>Genres: {movie.genres.map(g => g.name).join(", ")}</p>}
+    <p><strong>Release Date: </strong>{movie.release_date}</p>
+    <p><strong>Runtime: </strong>{movie.runtime} minutes</p>
+    {movie.genres && <p><strong>Genres: </strong>{movie.genres.map(g => g.name).join(", ")}</p>}
 
-    <p>Overview: {movie.overview}</p>
+    <p><strong>Overview: </strong> {movie.overview}</p>
 
   {<movie className="trailerKey"></movie> && (
     //  <iframe>
