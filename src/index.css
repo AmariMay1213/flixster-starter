@@ -12,6 +12,27 @@ body {
   gap: 1rem;
 }
 
+.load-more {
+  background: linear-gradient(to right, #ff4e50, #f9d423); 
+  color: white;
+  font-weight: bold;
+  border: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 30px;
+  font-size: 1rem;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  margin: 2rem auto;
+  display: block;
+}
+
+.load-more:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.25);
+  background: linear-gradient(to right, #f9d423, #ff4e50); 
+}
+
 button {
   background-color: #010711;
   color: rgb(215, 208, 208);
@@ -39,10 +60,10 @@ footer{
 }
 
 .banner {
-  background-image: url("assets/banner.jpg"); /* or whatever your corrected filename is */
+  background-image: url("assets/banner.jpg"); 
   background-size: cover;
   background-position: center;
-  height: 300px; /* set a visible height */
+  height: 300px; 
   display: flex;
   align-items: center;
   justify-content: center;

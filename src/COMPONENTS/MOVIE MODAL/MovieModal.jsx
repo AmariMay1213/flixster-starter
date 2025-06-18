@@ -30,11 +30,10 @@ const MovieModal = ({show, onClose,movie}) =>{
     <p><strong>Overview: </strong> {movie.overview}</p>
 
   {<movie className="trailerKey"></movie> && (
-    //  <iframe>
-    //  src={`https://www.youtube.com/embed/${movie.trailerKey}`}
-    // alt = {`${movie.title} trailer` }
-    // </iframe>
-    <iframe width="560" height="315" src={`https://www.youtube.com/embed/${movie.trailerKey}`} title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  
+    <iframe width="560" height="315" src={`https://www.youtube.com/embed/${movie.trailerKey}`} 
+    title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
   )}
    
